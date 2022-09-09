@@ -69,7 +69,11 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
+  Pair* eliminarpair = searchMap(map,key);
+  if (eliminarpair !=NULL){
+    eliminarpair->key = NULL;
+    map->size--;
+  }
 
 }
 
