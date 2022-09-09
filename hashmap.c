@@ -50,13 +50,13 @@ void insertMap(HashMap * map, char * key, void * value) {
   else if((is_equal(map->buckets[keyhash]->key, key))==0){
     int i = 0;
     while(1){
+      i+=1;
       if(map->buckets[keyhash+i%map->capacity] == NULL){
         Pair* newpair = createPair(key,value);
         map->buckets[keyhash+i%map->capacity]= newpair;
         map->size +=1;
         break;
       }
-      i+=1;
       if (i > map->capacity) break;
     }
   }
