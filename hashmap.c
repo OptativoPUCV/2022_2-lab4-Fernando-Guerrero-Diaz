@@ -46,6 +46,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     Pair* newpair = createPair(key,value);
     map->buckets[keyhash]= newpair;
     map->size +=1;
+    map->current = keyhash;
     break;
   }
   keyhash++;
@@ -97,8 +98,14 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+    map->current = 0;
+    while(1){
+      if(map->buckets[map->current]){
+        return map->buckets[map->current];
+      }
+      map->current++;
+      if (map->current >= map->capacity) return NULL;
+      }
 }
 
 Pair * nextMap(HashMap * map) {
