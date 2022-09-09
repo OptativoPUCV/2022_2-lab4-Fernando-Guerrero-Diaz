@@ -80,7 +80,7 @@ Pair * searchMap(HashMap * map,  char * key) {
   }
   int count=0;
   while(1){
-    if(is_equal(map->buckets[keyhash]->key,key)){
+    if(map->buckets[keyhash] != NULL && is_equal(map->buckets[keyhash]->key,key)){
       map->current= keyhash;
       return map->buckets[keyhash];
     }
