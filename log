@@ -68,3 +68,13 @@ Fri 09 Sep 2022 04:59:46 PM UTC:
  tests:  4|5
 total_score: 20/70
 a32272f
+Fri 09 Sep 2022 05:03:35 PM UTC: 
+ hashmap.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:89:3: error: expected ‘;’ before ‘}’ token
+   89 |   }
+      |   ^
+Compilation failed
+d473f31
