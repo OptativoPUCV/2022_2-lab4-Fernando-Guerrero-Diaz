@@ -116,4 +116,5 @@ Pair * nextMap(HashMap * map) {
         return map->buckets[map->current];
       }
     map->current++;
+    }
 }
