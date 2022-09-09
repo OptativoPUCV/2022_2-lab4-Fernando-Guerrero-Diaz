@@ -32,3 +32,9 @@ hashmap.c:75:16: error: statement with no effect [-Werror=unused-value]
 cc1: all warnings being treated as errors
 Compilation failed
 4510350
+Fri 09 Sep 2022 04:52:26 PM UTC: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  2|5
+total_score: 20/70
+6a077b2

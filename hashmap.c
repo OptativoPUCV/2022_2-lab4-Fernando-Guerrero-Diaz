@@ -56,6 +56,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->size +=1;
         break;
       }
+      i+=1;
       if (i >= map->capacity) break;
     }
   }
@@ -72,7 +73,7 @@ HashMap * createMap(long capacity) {
   HashMap * map = (HashMap *)malloc(sizeof(HashMap));
   map->buckets = (Pair **) calloc (capacity,sizeof(Pair *));
   map->capacity = capacity;
-  map->current == -1;
+  map->current = -1;
     return map;
 }
 
