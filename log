@@ -181,3 +181,30 @@ Fri 09 Sep 2022 05:45:56 PM UTC:
  tests:  16|1
 total_score: 60/70
 50a6309
+Fri 09 Sep 2022 05:56:15 PM UTC: 
+ hashmap.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:62:36: error: ‘capacity’ undeclared (first use in this function); did you mean ‘oldCapacity’?
+   62 |   map->buckets = (Pair **) calloc (capacity,sizeof(Pair *));
+      |                                    ^~~~~~~~
+      |                                    oldCapacity
+hashmap.c:62:36: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:65:16: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘<’ token
+   65 |   for(int i=0,i<oldCapacity,i++){
+      |                ^
+hashmap.c:70:1: error: expected expression before ‘}’ token
+   70 | }
+      | ^
+hashmap.c:70:1: error: expected expression before ‘}’ token
+hashmap.c:70:1: error: expected expression before ‘}’ token
+hashmap.c:65:11: error: unused variable ‘i’ [-Werror=unused-variable]
+   65 |   for(int i=0,i<oldCapacity,i++){
+      |           ^
+hashmap.c:59:10: error: unused variable ‘oldBuckets’ [-Werror=unused-variable]
+   59 |   Pair** oldBuckets = map->buckets;
+      |          ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4d1998a
