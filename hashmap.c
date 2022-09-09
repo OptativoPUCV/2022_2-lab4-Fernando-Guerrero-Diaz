@@ -78,11 +78,18 @@ Pair * searchMap(HashMap * map,  char * key) {
   if (map->buckets[keyhash]==NULL){
     return NULL;
   }
-  if(is_equal(map->buckets[keyhash]->key,key)){
-    map->current= keyhash;
-    return map->buckets[keyhash];
-  }
-    return NULL;
+  int count=0;
+  while(1){
+    if(is_equal(map->buckets[keyhash]->key,key)){
+      map->current= keyhash;
+      return map->buckets[keyhash];
+    }
+  keyhash++;
+  keyhash = keyhash%map->capacity;
+  count++;
+  if (count>map->capacity) break;}
+
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
